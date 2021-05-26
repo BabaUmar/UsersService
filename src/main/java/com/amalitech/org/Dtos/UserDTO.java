@@ -2,7 +2,7 @@ package com.amalitech.org.Dtos;
 
 public class UserDTO {
 
-	public int id;
+//	public int id;
 	public String emailAddress;
 	public String username;
 	public int groupId;
@@ -22,12 +22,12 @@ public class UserDTO {
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 	public String getEmailAddress() {
 		return emailAddress;
 	}

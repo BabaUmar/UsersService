@@ -49,14 +49,12 @@ public class User {
 	}
 
 	
-	public User(int id, String email, String name, Date createdDate, Date updatedDate, UserGroup userGroup) {
+	public User(String email, String name, UserGroup userGroup, Department department) {
 		super();
-		this.id = id;
 		this.email = email;
 		this.name = name;
-		this.createdDate = createdDate;
-		this.updatedDate = updatedDate;
 		this.userGroup = userGroup;
+		this.department = department;
 	}
 	public User(String email, String name, UserGroup userGroup) {
 		super();
@@ -69,21 +67,17 @@ public class User {
 	//Relationship 
 		@ManyToOne
 		@JoinColumn(name ="Usergroup_Id")
-		UserGroup userGroup;
+		private UserGroup userGroup;
 		
 		@ManyToOne
 		@JoinColumn(name ="Department_Id")
 		private Department department;
 		
-		public User(int id, String name, String email, UserGroup userGroup, Department department) {
-			super();
-			this.id = id;
-			this.name = name;
-			this.email = email;
-			this.userGroup = userGroup;
-			this.department = department;
-		}
 		
+	public void setUserGroup(UserGroup userGroup) {
+			this.userGroup = userGroup;
+		}
+
 	public User() {
 		super();
 	}
@@ -93,23 +87,23 @@ public class User {
 		this.email = email;
 	}
 
-	public User(int id, String name, String email) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-	}
+//	public User(String name, String email) {
+//		super();
+////		this.id = id;
+//		this.name = name;
+//		this.email = email;
+//	}
 	
 	public UserGroup getUserGroup() {
 		return userGroup;
 	}
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 	public String getEmail() {
 		return email;
 	}

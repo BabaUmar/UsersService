@@ -14,4 +14,5 @@ public interface UserGroupRepository extends JpaRepository<UserGroup,Integer> {
 	@Modifying
     @Query(value="update user_group set name= :userGroupName where id = :id", nativeQuery=true)
     void updateUserGroup(String userGroupName, int id);
+
 }

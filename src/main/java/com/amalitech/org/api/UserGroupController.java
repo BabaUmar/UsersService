@@ -24,8 +24,9 @@ public class UserGroupController {
 	UserGroupService userGroupService;
 	
 	
-	@PostMapping
+	@PostMapping(path="/add")
 	public UserGroup createNewUserGroup(@RequestBody UserGroupDTO groupDto) {
+		System.out.println(groupDto.getName());
 		UserGroup usergroup = new UserGroup();
 		usergroup.setName(groupDto.getName());
 		return this.userGroupService.createNewUserGroup(usergroup);
